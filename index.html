@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>final assignment</title>
+  </head>
+  <body>
+    <!-- clock -->
+    <section class="js-clock">
+      <h1 class="clock"></h1>
+      <span class="seconds fs-small"></span>
+    </section>
+    <section class="login-container">
+      <!-- login -->
+      <form class="loginForm">
+        <label for="name">이름: </label>
+        <input
+          type="text"
+          id="name"
+          placeholder="이름을 입력해 주세요"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <form class="nameForm nam hidden">
+        <h2></h2>
+        <h2></h2>
+        <button type="submit">이름 변경</button>
+      </form>
+    </section>
+
+    <section class="todo-container">
+      <form id="todoForm">
+        <label for="todoInput"></label>
+        <input type="text" id="todoInput" required />
+        <button type="submit">할 일 등록</button>
+      </form>
+      <ul id="todoList"></ul>
+    </section>
+
+    <section id="weather-container">
+      <span></span>
+      <span></span>
+      <span></span>
+    </section>
+
+    <script src="./js-folder/clock.js"></script>
+    <script src="./js-folder/login.js"></script>
+    <script src="./js-folder/randomBg.js"></script>
+    <script src="./js-folder/todoList.js"></script>
+    <script src="./js-folder/wheather.js"></script>
+    <script src="./js-folder/location.js"></script>
+  </body>
+</html>
