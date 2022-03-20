@@ -9,7 +9,6 @@ const USER_NAME = "username";
 const HIDDEN_CLASS = "hidden";
 
 const printName = function () {
-
   const name = localStorage.getItem(USER_NAME);
   nameScreen.innerHTML = `${name}`;
 

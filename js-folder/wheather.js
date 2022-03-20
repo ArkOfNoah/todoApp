@@ -1,12 +1,14 @@
 const API_KEY = "3edc621b2375494e428d942ebcd3c399";
 const cityDisplay = document.querySelector(
-  "#weather-container span:first-child"
+  "#weather-container > span"
 );
 const weatherDisplay = document.querySelector(
-  "#weather-container span:nth-child(2)"
+  ".weather-icon span:last-child"
 );
 const tempDisplay = document.querySelector(
-  "#weather-container span:last-child"
+  ".temp-icon span");
+const iconDisplay = document.querySelector(
+  ".weather-icon span:first-child"
 );
 
 const success = function (locationObj) {
@@ -21,6 +23,7 @@ const success = function (locationObj) {
           temp: data.main.temp,
           city: data.name,
           weather: data.weather[0].main,
+          icon: data.weather[0].description,
         };
 
         printWeather(weatherObj);
@@ -37,6 +40,10 @@ const printWeather = function (weatherObj) {
   cityDisplay.innerHTML = weatherObj.city;
   tempDisplay.innerHTML = weatherObj.temp;
   weatherDisplay.innerHTML = weatherObj.weather;
+
+  const iconDescription = weatherObj.icon;
+
+  iconDisplay.style.backgroundImage = `url("./assets/${iconDescription}.svg")`;
 };
 
 navigator.geolocation.getCurrentPosition(success, fail);

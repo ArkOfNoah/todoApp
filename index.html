@@ -8,7 +8,11 @@
       href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>final assignment</title>
+    <script
+      src="https://kit.fontawesome.com/6d3c355e58.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>momentum</title>
   </head>
   <body>
     <div class="container">
@@ -20,38 +24,47 @@
       <section class="login-container">
         <!-- login -->
         <form class="loginForm hidden">
-          <label for="name">이름: </label>
-          <input
-            type="text"
-            id="name"
-            placeholder="이름을 입력해 주세요"
-            required
-          />
-          <button type="submit">Login</button>
+          <div>
+            <label for="name">이름: </label>
+            <input
+              type="text"
+              id="name"
+              placeholder="이름을 입력해 주세요"
+              required
+              autocomplete="off"
+            />
+            <div class="underline"></div>
+          </div>
         </form>
         <form class="nameForm hidden">
           <div>
             <h2></h2>
             <h2></h2>
-            <button type="submit">이름 변경</button>
+            <button type="submit"><span>변경</span></button>
           </div>
         </form>
       </section>
-  
+
       <section class="todo-container hidden">
         <h2>What's your today's goal?</h2>
         <form id="todoForm">
           <label for="todoInput"></label>
-          <input type="text" id="todoInput" required />
-          <button type="submit">할 일 등록</button>
+          <input type="text" id="todoInput" required autocomplete="off" />
+          <div class="underline"></div>
         </form>
         <ul id="todoList"></ul>
       </section>
-  
+
       <section id="weather-container">
+        <div class="weather-icon">
+          <span></span>
+          <span>Clear</span>
+        </div>
         <span></span>
-        <span></span>
-        <span></span>
+        <div class="temp-icon">
+          <i class="fa-solid fa-temperature-half"></i>
+          <span></span>
+        </div>
       </section>
     </div>
 

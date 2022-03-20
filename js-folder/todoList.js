@@ -42,7 +42,7 @@ const displayTodo = function (element = 0) {
 
   span.innerText = element !== 0 ? element : todoInput.value;
   const btn = document.createElement("button");
-  btn.innerText = "X";
+  btn.innerHTML = "X";
   btn.addEventListener("click", deleteTodo);
 
   li.appendChild(span);

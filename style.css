@@ -16,8 +16,7 @@ ul,
 li,
 form,
 label,
-section
-{
+section {
   margin: 0;
   padding: 0;
   border: 0;
@@ -57,13 +56,13 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
-  animation: fadeInAnimation 1000ms ease-in;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   letter-spacing: 0.02em;
+  min-width: 800px;
 }
 
 h2 {
@@ -75,18 +74,25 @@ h2 {
   display: none;
 }
 
-#weather-container {
-  animation: fadeInAnimation 750ms ease-in 1000ms;
-}
-
+/* animation */
 @keyframes fadeInAnimation {
   0% {
-    background-size: 105%;
     opacity: 0;
   }
   100% {
-    background-size: 100%;
     opacity: 1;
+  }
+}
+
+@keyframes anime {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
@@ -97,31 +103,47 @@ h2 {
 }
 
 button {
-  font-size:15px;
-  width:100px;
-  height:40px;
-  color:azure;
-  font-weight:700;
-  border-radius: 5px;
-  background:linear-gradient(#599bb3, #408c99);
+  padding: 5px 15px;
+  font-size: 15px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+  border-radius: 7px;
+  background: linear-gradient(-45deg, #ffa63d, #ff3d77, #338aff, #3cf0c5);
+  background-size: 600%;
+  animation: anime 16s linear infinite;
 }
 
 button:hover {
-  background: linear-gradient(#408c99, #599bb3);
+  background: linear-gradient(-45deg, #3cf0c5, #338aff, #ff3d77, #ffa63d);
+  background-size: 600%;
+  animation: anime 16s linear infinite;
 }
 
 input {
   width: 500px;
   height: 35px;
-  border-bottom: 4px solid rgb(240, 255, 255, 1);
-  border-radius: 5px;
+  font-size: 35px;
   caret-color: azure;
+  text-align: center;
+  color: azure;
+  font-weight: 700;
 }
 
-input:focus {
-  border-bottom: 4px solid rgb(240, 255, 255, 0.7);
+input::placeholder {
+  color: rgb(255, 255, 255, 0.5);
+  font-style: italic;
 }
 
+.underline {
+  width: 550px;
+  height: 4px;
+  border-radius: 5px;
+  background-color: azure;
+  display: block;
+  position: absolute;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
 /* basic setting */
 
 /* design */
@@ -136,49 +158,82 @@ input:focus {
   position: absolute;
   font-size: 8rem;
   font-weight: 700;
-  animation: fadeInAnimation 250ms ease-in 1000ms;
-
   align-items: baseline;
   display: flex;
-
   margin-bottom: 20px;
+  animation: fadeInAnimation 1000ms ease-in;
 }
 
 .js-clock .seconds {
   font-size: 0.5em;
 }
 
-
 /* login */
 
+#name {
+  vertical-align: bottom;
+}
+
 .login-container {
+  vertical-align: bottom;
   position: absolute;
   top: 35%;
   width: 100%;
   margin-bottom: 20px;
-  font-weight: 400;
+  animation: fadeInAnimation 1000ms ease-in;
 }
 
 .loginForm {
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInAnimation 500ms ease-in;
+}
+
+.loginForm label {
+  margin-top: 7px;
+}
+
+.loginForm div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: baseline;
+}
+
+.loginForm .underline {
+  width: 500px;
+  margin-left: 70px;
+  margin-top: 80px;
+}
+
+.loginForm label {
+  display: inline-block;
+  height: 35px;
+  vertical-align: bottom;
   font-size: 30px;
 }
 
 .nameForm {
   position: absolute;
   width: 100%;
+  animation: fadeInAnimation 1000ms ease-in;
 }
 
-.nameForm div{
+.nameForm div {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
 }
 
+.nameForm div h2 {
+  color: rgb(201, 201, 201);
+}
+
 .nameForm h2:nth-child(2) {
   margin-right: 20px;
 }
-
 
 /* todo container */
 
@@ -187,6 +242,7 @@ input:focus {
   width: 100%;
   top: 50%;
   font-weight: 400;
+  animation: fadeInAnimation 1000ms ease-in;
 }
 
 .todo-container > h2 {
@@ -195,6 +251,8 @@ input:focus {
 
 #todoForm {
   margin-bottom: 15px;
+  display: flex;
+  justify-content: center;
 }
 
 #todoForm input {
@@ -204,10 +262,19 @@ input:focus {
 #todoList {
   margin: 0 auto;
   width: 40%;
-  height: 20vh;
+  height: 30vh;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  overflow: hidden;
+}
+
+#todoList::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+#todoList {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 #todoList li {
@@ -215,17 +282,66 @@ input:focus {
   text-align: left;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   flex-grow: 0;
   margin-right: 5px;
   right: 0;
+  margin-top: 30px;
+  min-width: 200px;
+  animation: fadeInAnimation 500ms ease-in;
 }
 
-#todoList li:hover {
-  color: #202020;
-}
-
-#todoList li span{
+#todoList li span {
   margin-right: 10px;
   font-size: 25px;
+  display: inline-block;
+}
+
+/* weather */
+#weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-width: 150px;
+  height: 125px;
+  background-color: azure;
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  opacity: 60%;
+  animation: fadeInAnimation 1000ms ease-in;
+}
+
+#weather-container > span {
+  position: absolute;
+  left: 13px;
+  bottom: 25px;
+}
+
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+}
+
+.weather-icon span:first-child {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0 10px;
+}
+
+.temp-icon {
+  position: absolute;
+  right: 13px;
+  bottom: 25px;
+  margin-right: 5px;
 }
