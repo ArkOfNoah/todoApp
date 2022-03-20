@@ -2,83 +2,22 @@ html,
 body,
 div,
 span,
-applet,
-object,
-iframe,
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 p,
-blockquote,
-pre,
 a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
 img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
 b,
 u,
 i,
-center,
-dl,
-dt,
-dd,
 ol,
 ul,
 li,
-fieldset,
 form,
 label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+section
+{
   margin: 0;
   padding: 0;
   border: 0;
@@ -87,16 +26,7 @@ video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
+
 section {
   display: block;
 }
@@ -106,6 +36,13 @@ body {
 ol,
 ul {
   list-style: none;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  background: none;
 }
 
 /* reset css */
@@ -126,6 +63,12 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  letter-spacing: 0.02em;
+}
+
+h2 {
+  font-size: 50px;
+  font-weight: 600;
 }
 
 .hidden {
@@ -147,29 +90,142 @@ body {
   }
 }
 
+.container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+button {
+  font-size:15px;
+  width:100px;
+  height:40px;
+  color:azure;
+  font-weight:700;
+  border-radius: 5px;
+  background:linear-gradient(#599bb3, #408c99);
+}
+
+button:hover {
+  background: linear-gradient(#408c99, #599bb3);
+}
+
+input {
+  width: 500px;
+  height: 35px;
+  border-bottom: 4px solid rgb(240, 255, 255, 1);
+  border-radius: 5px;
+  caret-color: azure;
+}
+
+input:focus {
+  border-bottom: 4px solid rgb(240, 255, 255, 0.7);
+}
+
 /* basic setting */
 
 /* design */
 
 /* clock */
-li {
-  display: inline-block;
-}
 
 .js-clock {
-  top: 0;
-  padding: 10% 0 0 0;
-
+  top: 10%;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-start;
   position: absolute;
-  font-size: 8em;
-  min-width: 500px;
+  font-size: 8rem;
+  font-weight: 700;
   animation: fadeInAnimation 250ms ease-in 1000ms;
 
-  display: flex;
-  justify-content: center;
   align-items: baseline;
+  display: flex;
+
+  margin-bottom: 20px;
 }
 
 .js-clock .seconds {
   font-size: 0.5em;
+}
+
+
+/* login */
+
+.login-container {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.loginForm {
+  font-size: 30px;
+}
+
+.nameForm {
+  position: absolute;
+  width: 100%;
+}
+
+.nameForm div{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.nameForm h2:nth-child(2) {
+  margin-right: 20px;
+}
+
+
+/* todo container */
+
+.todo-container {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  font-weight: 400;
+}
+
+.todo-container > h2 {
+  margin-bottom: 30px;
+}
+
+#todoForm {
+  margin-bottom: 15px;
+}
+
+#todoForm input {
+  margin-right: 10px;
+}
+
+#todoList {
+  margin: 0 auto;
+  width: 40%;
+  height: 20vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#todoList li {
+  margin-bottom: 15px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-grow: 0;
+  margin-right: 5px;
+  right: 0;
+}
+
+#todoList li:hover {
+  color: #202020;
+}
+
+#todoList li span{
+  margin-right: 10px;
+  font-size: 25px;
 }

@@ -9,7 +9,6 @@ const USER_NAME = "username";
 const HIDDEN_CLASS = "hidden";
 
 const printName = function () {
-  loginForm.classList.add(HIDDEN_CLASS);
 
   const name = localStorage.getItem(USER_NAME);
   nameScreen.innerHTML = `${name}`;
@@ -19,11 +18,14 @@ const printName = function () {
 };
 
 const submitLS = function (event) {
+  loginForm.classList.add(HIDDEN_CLASS);
   event.preventDefault();
 
   localStorage.setItem(USER_NAME, nameInput.value);
   printName();
 };
+
+// 새로고침 후 화면 표시
 
 if (localStorage.getItem(USER_NAME) === null) {
   loginForm.classList.remove(HIDDEN_CLASS);
@@ -42,6 +44,9 @@ const resetName = function (event) {
   localStorage.removeItem(USER_NAME);
   loginForm.classList.remove(HIDDEN_CLASS);
   nameForm.classList.add(HIDDEN_CLASS);
+
+  nameInput.value = "";
+  nameInput.focus();
 };
 
 nameResetBtn.addEventListener("click", resetName);

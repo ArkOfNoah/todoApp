@@ -11,44 +11,49 @@
     <title>final assignment</title>
   </head>
   <body>
-    <!-- clock -->
-    <section class="js-clock">
-      <h1 class="clock"></h1>
-      <span class="seconds fs-small"></span>
-    </section>
-    <section class="login-container">
-      <!-- login -->
-      <form class="loginForm">
-        <label for="name">이름: </label>
-        <input
-          type="text"
-          id="name"
-          placeholder="이름을 입력해 주세요"
-          required
-        />
-        <button type="submit">Login</button>
-      </form>
-      <form class="nameForm nam hidden">
-        <h2></h2>
-        <h2></h2>
-        <button type="submit">이름 변경</button>
-      </form>
-    </section>
-
-    <section class="todo-container hidden">
-      <form id="todoForm">
-        <label for="todoInput"></label>
-        <input type="text" id="todoInput" required />
-        <button type="submit">할 일 등록</button>
-      </form>
-      <ul id="todoList"></ul>
-    </section>
-
-    <section id="weather-container">
-      <span></span>
-      <span></span>
-      <span></span>
-    </section>
+    <div class="container">
+      <!-- clock -->
+      <section class="js-clock">
+        <h1 class="clock"></h1>
+        <span class="seconds fs-small"></span>
+      </section>
+      <section class="login-container">
+        <!-- login -->
+        <form class="loginForm hidden">
+          <label for="name">이름: </label>
+          <input
+            type="text"
+            id="name"
+            placeholder="이름을 입력해 주세요"
+            required
+          />
+          <button type="submit">Login</button>
+        </form>
+        <form class="nameForm hidden">
+          <div>
+            <h2></h2>
+            <h2></h2>
+            <button type="submit">이름 변경</button>
+          </div>
+        </form>
+      </section>
+  
+      <section class="todo-container hidden">
+        <h2>What's your today's goal?</h2>
+        <form id="todoForm">
+          <label for="todoInput"></label>
+          <input type="text" id="todoInput" required />
+          <button type="submit">할 일 등록</button>
+        </form>
+        <ul id="todoList"></ul>
+      </section>
+  
+      <section id="weather-container">
+        <span></span>
+        <span></span>
+        <span></span>
+      </section>
+    </div>
 
     <script src="./js-folder/clock.js"></script>
     <script src="./js-folder/login.js"></script>
